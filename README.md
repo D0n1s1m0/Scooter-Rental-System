@@ -95,25 +95,6 @@ Scooter Rental System — консольное приложение с перс�
 - управление парком самокатов для операторов (ПР9–ПР10);
 - REST API для мобильного клиента (ПР5–ПР9).
 
-## Структура проекта
-
-```
-scooter-rental/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── main.py          — точка запуска и меню
-├── scooters.py      — работа с самокатами
-├── rentals.py       — аренды и расчёт стоимости
-├── storage.py       — загрузка/сохранение JSON
-├── utils.py         — безопасный ввод
-├── data/
-│   ├── scooters.json
-│   └── rentals.json
-└── tests/
-    ├── test_scooters.py
-    └── test_rentals.py
-```
 
 ## Формат хранения данных
 
