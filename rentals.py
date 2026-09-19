@@ -1,6 +1,6 @@
 """Функции для работы с арендами."""
 
-from datetime import date, timedelta
+from datetime import date
 
 TARIFF_PER_MINUTE = 5.0
 UNLOCK_FEE = 30.0
@@ -32,7 +32,8 @@ def is_scooter_available(
 ) -> bool:
     """Проверить, свободен ли самокат на указанную дату."""
     for r in rentals:
-        if r["scooter_id"] == scooter_id and r["date"] == rental_date.isoformat():
+        if (r["scooter_id"] == scooter_id
+                and r["date"] == rental_date.isoformat()):
             return False
     return True
 

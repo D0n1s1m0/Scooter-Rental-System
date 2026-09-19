@@ -1,7 +1,5 @@
 """Функции для работы с самокатами."""
 
-from typing import Optional
-
 
 def add_scooter(
     scooters: dict[int, dict],
@@ -39,14 +37,17 @@ def filter_scooters_by_charge(
     scooters: dict[int, dict],
     min_charge: int,
 ) -> list[int]:
-    """Отобрать самокаты с зарядом не меньше min_charge (генератор)."""
-    return [sid for sid, s in scooters.items() if s["charge"] >= min_charge]
+    """Отобрать самокаты с зарядом не меньше min_charge."""
+    return [
+        sid for sid, s in scooters.items()
+        if s["charge"] >= min_charge
+    ]
 
 
 def sort_scooters_by_charge(
     scooters: dict[int, dict],
 ) -> list[tuple[int, dict]]:
-    """Отсортировать самокаты по заряду (убывание) через lambda."""
+    """Отсортировать самокаты по заряду (убывание)."""
     return sorted(
         scooters.items(),
         key=lambda item: item[1]["charge"],
@@ -54,7 +55,10 @@ def sort_scooters_by_charge(
     )
 
 
-def get_scooter_status(scooters: dict[int, dict], scooter_id: int) -> str:
+def get_scooter_status(
+    scooters: dict[int, dict],
+    scooter_id: int,
+) -> str:
     """Вернуть текстовый статус самоката."""
     scooter = scooters.get(scooter_id)
     if scooter is None:

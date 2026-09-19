@@ -22,11 +22,15 @@ def load_scooters(filename: str = SCOOTERS_FILE) -> dict[int, dict]:
     except FileNotFoundError:
         return {}
     except json.JSONDecodeError:
-        print(f"Ошибка: файл {filename} повреждён. Создаём пустой список.")
+        print(f"Ошибка: файл {filename} повреждён. "
+              f"Создаём пустой список.")
         return {}
 
 
-def save_scooters(scooters: dict[int, dict], filename: str = SCOOTERS_FILE) -> None:
+def save_scooters(
+    scooters: dict[int, dict],
+    filename: str = SCOOTERS_FILE,
+) -> None:
     """Сохранить самокаты в JSON-файл."""
     _ensure_data_dir()
     with open(filename, "w", encoding="utf-8") as f:
@@ -41,11 +45,15 @@ def load_rentals(filename: str = RENTALS_FILE) -> list[dict]:
     except FileNotFoundError:
         return []
     except json.JSONDecodeError:
-        print(f"Ошибка: файл {filename} повреждён. Создаём пустой список.")
+        print(f"Ошибка: файл {filename} повреждён. "
+              f"Создаём пустой список.")
         return []
 
 
-def save_rentals(rentals: list[dict], filename: str = RENTALS_FILE) -> None:
+def save_rentals(
+    rentals: list[dict],
+    filename: str = RENTALS_FILE,
+) -> None:
     """Сохранить аренды в JSON-файл."""
     _ensure_data_dir()
     with open(filename, "w", encoding="utf-8") as f:
