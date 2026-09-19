@@ -185,13 +185,3 @@ flake8
 ```
 
 ---
-
-## Как обновить README в репозитории
-
-```bash
-git add README.md
-git commit -m "ПР2: обновлён README — новые функции, структура и формат данных"
-git push origin main
-```
-
-Или просто скопируйте содержимое выше и вставьте в `README.md` на GitHub через веб-интерфейс (**Edit** → вставить → **Commit changes**).
