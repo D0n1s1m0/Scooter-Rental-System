@@ -1,13 +1,10 @@
-"""Вспомогательные функции проекта."""
+"""Вспомогательные функции ввода."""
 
-from datetime import date, datetime
+from datetime import datetime
 
 
 def input_int(prompt: str) -> int:
-    """Запросить у пользователя целое число.
-
-    При некорректном вводе запрос повторяется.
-    """
+    """Запросить целое число, повторяя при ошибке."""
     while True:
         try:
             return int(input(prompt))
@@ -16,7 +13,7 @@ def input_int(prompt: str) -> int:
 
 
 def input_float(prompt: str) -> float:
-    """Запросить у пользователя число с плавающей точкой."""
+    """Запросить число, повторяя при ошибке."""
     while True:
         try:
             return float(input(prompt))
@@ -24,10 +21,11 @@ def input_float(prompt: str) -> float:
             print("Ошибка: введите число.")
 
 
-def input_date(prompt: str) -> date:
-    """Запросить у пользователя дату в формате ДД.ММ.ГГГГ."""
+def input_date(prompt: str) -> str:
+    """Запросить дату в формате ДД.ММ.ГГГГ, вернуть ISO-строку."""
     while True:
         try:
-            return datetime.strptime(input(prompt), "%d.%m.%Y").date()
+            d = datetime.strptime(input(prompt), "%d.%m.%Y").date()
+            return d.isoformat()
         except ValueError:
-            print("Ошибка: неверный формат даты. Пример: 15.09.2026")
+            print("Ошибка: неверный формат. Пример: 15.09.2026")

@@ -2,7 +2,7 @@
 
 from datetime import date
 
-from rentals import (
+from models.rentals import (
     calculate_base_cost,
     calculate_discount,
     calculate_total,
