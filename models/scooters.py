@@ -35,10 +35,12 @@ class Scooter:
 
     def __str__(self) -> str:
         """Строковое представление самоката."""
-        return (f"{self.model} "
-                f"(заряд {self.charge}%, "
-                f"станция {self.station_id}, "
-                f"статус {self.status})")
+        return (
+            f"{self.model} "
+            f"(заряд {self.charge}%, "
+            f"станция {self.station_id}, "
+            f"статус {self.status})"
+        )
 
 
 def add_scooter(

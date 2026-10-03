@@ -56,10 +56,7 @@ def find_user_by_id(
 def find_users(users: List[User], query: str) -> List[User]:
     """Найти пользователей по имени или email."""
     q = query.lower()
-    return [
-        u for u in users
-        if q in u.name.lower() or q in u.email.lower()
-    ]
+    return [u for u in users if q in u.name.lower() or q in u.email.lower()]
 
 
 def show_users(users: List[User]) -> None:

@@ -41,10 +41,12 @@ class Rental:
     def __str__(self) -> str:
         """Строковое представление аренды."""
         state = "завершена" if self.is_finished else "активна"
-        return (f"Аренда #{self.id}: {self.scooter.model} "
-                f"для {self.user.name}, "
-                f"{self.rental_date}, {self.minutes:.0f} мин, "
-                f"{self.total:.2f} руб. [{state}]")
+        return (
+            f"Аренда #{self.id}: {self.scooter.model} "
+            f"для {self.user.name}, "
+            f"{self.rental_date}, {self.minutes:.0f} мин, "
+            f"{self.total:.2f} руб. [{state}]"
+        )
 
 
 def calculate_base_cost(minutes: float) -> float:
@@ -123,3 +125,12 @@ def show_rentals(rentals: List[Rental]) -> None:
         return
     for r in rentals:
         print(f"  {r}")
+def find_rental_by_id(
+    rentals: list,
+    rental_id: int,
+):
+    """Найти аренду по идентификатору."""
+    for r in rentals:
+        if r.id == rental_id:
+            return r
+    return None

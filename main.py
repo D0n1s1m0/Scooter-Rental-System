@@ -78,7 +78,11 @@ def create_new_rental(
     minutes = input_float("Длительность поездки (мин): ")
 
     rental = create_rental(
-        rentals, scooter, user, rental_date, minutes,
+        rentals,
+        scooter,
+        user,
+        rental_date,
+        minutes,
     )
     if rental is None:
         print("Самокат уже занят на эту дату.")
@@ -128,8 +132,11 @@ def main() -> None:
             create_new_rental(rentals, scooters, users)
         elif choice == "8":
             rid = input_int("ID аренды для завершения: ")
-            print("Аренда завершена." if cancel_rental(rentals, rid)
-                  else "Аренда не найдена.")
+            print(
+                "Аренда завершена."
+                if cancel_rental(rentals, rid)
+                else "Аренда не найдена."
+            )
         elif choice == "9":
             show_rentals(rentals)
         elif choice == "10":
