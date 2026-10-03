@@ -5,7 +5,7 @@
 
 from typing import List
 
-from models import Rental, Scooter, Station, User
+from models import Rental, Scooter, User
 from models.rentals import (
     cancel_rental,
     create_rental,
